@@ -1,7 +1,10 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../firebaseProvider/FirebaseProvider";
+import { axiosPublic } from "../../hocks/useAxiosPublic";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 
 const Register = () => {
@@ -14,11 +17,16 @@ const Register = () => {
         handleSubmit,
         formState: { errors },
     } = useForm()
+    const Navigate = useNavigate()
     const onSubmit = (data) => {
-        // const email = data.email;
-        // const role = data
+        const email = data.email;
+        const name = data.fullName;
+        const potoUrl = data.potho;
+        const role = data.role;
+        const status = role === "buyer" ? "approved" : "panding";
+        const userInfo = {email,name,role,status,data,potoUrl}
 
-        console.log(data)
+        console.log(userInfo)
         setRegisterError('')
         setSuccess('')
         // console.log(data.password , data.confirmpassword)
@@ -34,10 +42,28 @@ const Register = () => {
             setRegisterError('password didnot mach');
             return;
         }
+
+     
+
         createUser(data.email,data.password)   
          .then(result => {
             // console.log(result.user);
             setSuccess('User Created Successfully')
+            axiosPublic.post('/user', userInfo)
+            // axios.post('http://localhost:4000/user', userInfo)
+            .then(res => {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'User created successfully.',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                   Navigate("/")
+                }
+            })
          })
          .catch(error => {
             setRegisterError(error.message);

@@ -2,6 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hocks/useAuth";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const {sinInUser,gooleSingIn } = useAuth()
@@ -42,10 +44,26 @@ const Login = () => {
                 const email= userInfo.email;
                 const name = userInfo.displayName;
                 const role = "buyer";
-                const uIfo={email,name,role}
+                const status ="approved";
+                const uIfo={email,name,role,status}
+
+                axios.post('http://localhost:4000/user', uIfo)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        console.log(res.data)
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'User created successfully.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                })
 
                 console.log(uIfo)
                 Navigate(from)
+                
             }
         })
     }
