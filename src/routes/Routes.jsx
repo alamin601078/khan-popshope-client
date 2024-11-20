@@ -6,6 +6,9 @@ import Contact from "../pages/Contact";
 import About from "../pages/About";
 import Login from "../component/share/Login";
 import Register from "../component/share/Register";
+import Dashbard from "../component/dashboard/Dashbard";
+import Profile from "../component/share/Profile";
+import Setting from "../component/share/Setting";
 
 
 export const router = createBrowserRouter([
@@ -31,7 +34,21 @@ export const router = createBrowserRouter([
         },{
           path:"/register",
           element:<Register/>
+        },{
+          path:"/profile",
+          element:<Profile/>
+        },{
+          path:"/setting",
+          element:<Setting/>
         }
       ]
-    },
+    },{
+      path:"/dashboard",
+      element:<Dashbard/>,
+      children:[
+        {
+
+        }
+      ]
+    }
   ]);
