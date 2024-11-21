@@ -1,0 +1,24 @@
+import useAuth from "../../hocks/useAuth";
+
+
+const HeroSection = () => {
+    const { user } = useAuth();
+    console.log(user)
+    return (
+<div
+  className="hero min-h-screen"
+  style={{
+    backgroundImage: "url(https://i.ibb.co.com/GRywgj0/5972189-21621.jpg)",
+  }}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-neutral-content text-center">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold">{user?.displayName} <br /> WellCome KHAN POPSHPE</h1>
+      <button className="btn btn-primary"><a href="product">PRODUCT</a></button>
+    </div>
+  </div>
+</div>
+    );
+};
+
+export default HeroSection;
