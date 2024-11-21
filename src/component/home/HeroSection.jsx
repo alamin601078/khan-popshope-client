@@ -13,8 +13,8 @@ const HeroSection = () => {
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content text-center">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">{user?.displayName} <br /> WellCome KHAN POPSHPE</h1>
-      <button className="btn btn-primary"><a href="product">PRODUCT</a></button>
+      <h1 className="mb-5 text-5xl font-bold">{user?.displayName} <br /> WellCome <br /> KHAN POPSHPE</h1>
+      <button className="btn btn-primary"><a href="product">SHOW PRODUCT</a></button>
     </div>
   </div>
 </div>

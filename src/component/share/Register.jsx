@@ -24,7 +24,7 @@ const Register = () => {
         const potoUrl = data.potho;
         const role = data.role;
         const status = role === "buyer" ? "approved" : "panding";
-        const userInfo = {email,name,role,status,data,potoUrl}
+        const userInfo = {email,name,role,status,potoUrl}
 
         console.log(userInfo)
         setRegisterError('')
