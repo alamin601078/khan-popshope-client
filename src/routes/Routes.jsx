@@ -9,6 +9,9 @@ import Dashbard from "../component/dashboard/Dashbard";
 import Profile from "../component/share/Profile";
 import Setting from "../component/share/Setting";
 import ContactP from "../pages/ContactP";
+import AdminHome from "../component/dashboard/admin/AdminHome";
+import BuyerHome from "../component/dashboard/buyer/BuyerHome";
+import SellerHome from "../component/dashboard/seller/SellerHome";
 
 
 export const router = createBrowserRouter([
@@ -47,7 +50,14 @@ export const router = createBrowserRouter([
       element:<Dashbard/>,
       children:[
         {
-
+          path:"/dashboard/adminhome",
+          element: <AdminHome/>
+        },{
+          path:"/dashboard/buyerhome",
+          element:<BuyerHome/>
+        },{
+          path:"/dashboard/sellerhome",
+          element:<SellerHome/>
         }
       ]
     }
