@@ -12,6 +12,7 @@ import ContactP from "../pages/ContactP";
 import AdminHome from "../component/dashboard/admin/AdminHome";
 import BuyerHome from "../component/dashboard/buyer/BuyerHome";
 import SellerHome from "../component/dashboard/seller/SellerHome";
+import Protuct from "../component/protuct/Protuct";
 
 
 export const router = createBrowserRouter([
@@ -47,7 +48,7 @@ export const router = createBrowserRouter([
       ]
     },{
       path:"/dashboard",
-      element:<Dashbard/>,
+      element:<Protuct><Dashbard/></Protuct>,
       children:[
         {
           path:"/dashboard/adminhome",

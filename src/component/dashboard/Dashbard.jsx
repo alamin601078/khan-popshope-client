@@ -7,7 +7,7 @@ import SellerManu from "./seller/SellerManu";
 
 const Dashbard = () => {
     const {role }= useRole();  
-    console.log(role)
+    // console.log(role)
 
 
    
@@ -18,7 +18,7 @@ const Dashbard = () => {
             <ul className="menu p-4">
                 
                 { role ==='admin'&& <AdminManu/>}
-                { role ==='trainer'&& <SellerManu/>}
+                { role ==='seller'&& <SellerManu/>}
                 { role ==='buyer'&& <BuyerManu/>}
 
                 <div className="divider"></div>
