@@ -1,9 +1,10 @@
+import Blog from "../component/share/Blog";
 
 
 const About = () => {
     return (
         <div>
-            about
+            <Blog/>
         </div>
     );
 };

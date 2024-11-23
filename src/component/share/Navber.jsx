@@ -16,6 +16,7 @@ const Navber = () => {
     }
     
     const navOptions = <> 
+      <li><Link to="/">Home</Link></li>
       <li><Link to="/product">Products</Link></li>
       <li><Link to="/contact">Contacts</Link></li>
       <li><Link to="/about">About</Link></li>
