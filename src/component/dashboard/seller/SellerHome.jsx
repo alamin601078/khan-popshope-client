@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { axiosPublic } from "../../../hocks/useAxiosPublic";
-import Swal from "sweetalert2";
-import { FaTrashAlt } from "react-icons/fa";
 
+import { FaTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const SellerHome = () => {
     const [product, setProduct]= useState([])
