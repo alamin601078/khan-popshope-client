@@ -11,7 +11,7 @@ const SellerHome = () => {
         axiosPublic.get(`/product`)
         .then(res =>{
             // console.log(res.data)
-            setProduct(res.data)
+            setProduct(res.data.result)
         })
     })
 
@@ -43,7 +43,7 @@ const SellerHome = () => {
         });
     }
     return (
-        <div>
+        <div className="">
         <div className="flex justify-evenly my-4">
             <h2 className="text-3xl">All Products</h2>
             <h2 className="text-3xl">Total Products: {product.length}</h2>
@@ -55,13 +55,14 @@ const SellerHome = () => {
                     <tr>
                         <th></th>
                         <th>Category</th>
-                        <th>Name</th>
+                        <th>Title</th>
                         <th>Brand</th>
                         <th>Prices</th>
                         <th>Status</th>
-                        <th>Slots</th>
+                        <th>Stock</th>
                         <th>Actions</th>
                         <th>Images</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,14 +70,14 @@ const SellerHome = () => {
                         product.map((user, index) => <tr key={user._id}>
                             <th>{index + 1}</th>
                             <td>{user.category}</td>
-                            <td>{user.name}</td>
+                            <td>{user.title}</td>
                             <td>{user.brand}</td>
                             <td>
                             {user.price}
                             </td>
                             <td>{user.status}</td>
                             <td>
-                            {user.slot}
+                            {user.stock}
                             </td>
                             <td>
                             <button
@@ -87,6 +88,9 @@ const SellerHome = () => {
                             </td>
                             <td>
                             {user.image}
+                            </td>
+                            <td>
+                            {user.sellerEmail}
                             </td>
                         </tr>)
                     }

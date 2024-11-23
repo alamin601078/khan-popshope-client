@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../firebaseProvider/FirebaseProvider";
 import { axiosPublic } from "../../hocks/useAxiosPublic";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 
 const Register = () => {

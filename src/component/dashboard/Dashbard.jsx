@@ -12,7 +12,7 @@ const Dashbard = () => {
 
    
     return (
-        <div className="flex">
+        <div className="">
         {/* dashboard side bar */}
         <div className="w-64 min-h-screen bg-opacity-30  bg-black">
             <ul className="menu p-4">

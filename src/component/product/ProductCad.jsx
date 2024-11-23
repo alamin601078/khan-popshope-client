@@ -1,23 +1,85 @@
 import { useEffect, useState } from "react";
 import { axiosPublic } from "../../hocks/useAxiosPublic";
+import { FaSearch } from "react-icons/fa";
 
 
 const ProductCad = () => {
     const [product, setProduct]= useState([])
+    const [search, setSearch]= useState("")
+    const [sort, setSort]= useState('asc')
+    const [category, setCategory]= useState("")
+    const [brand, setBrand]= useState("")
+
+    const [uniqueBrand , setUniqueBrand] = useState([]);
+    const [uniqueCategory , setUniqueCategory] = useState([]);
+
+    console.log(brand, category,sort,search)
+    // console.log(uniqueBrand,uniqueCategory)
     useEffect(() =>{
-    
-        axiosPublic.get(`/product`)
+       const fetch = async () => {
+        axiosPublic.get(`/product?title=${search}&sort=${sort}&brand=${brand}&category=${category}`)
         .then(res =>{
             // console.log(res.data)
-            setProduct(res.data)
+            setUniqueBrand(res.data.brands);
+            setUniqueCategory(res.data.categories)
+            setProduct(res.data.result)
         })
-    })
+       }
+    fetch();
+    },[search,sort,category,brand])
     // console.log(product)
+
+    const handleSearch = (e) =>{
+        e.preventDefault();
+        setSearch(e.target.search.value);
+        e.target.search.value = "";
+    }
+
+    const handlereset = () => {
+        setSearch("");
+        setSort("asc");
+        setCategory("");
+        setBrand("");
+        window.location.reload();
+    }
 
     return (
         <div className="grid grid-flow-col lg:grid-cols-12">
             <div className="grid col-span-2">
-                Brand
+                <div>
+                <form className="input input-bordered flex items-center gap-2" onSubmit={handleSearch}>
+              <input type="text" name="search" className="grow" placeholder="Search" />
+              <button><FaSearch /></button>
+            </form>
+             <p className="font-bold text-xl pl-2 my-2">Prices</p>
+            <select className="select select-bordered w-full max-w-xs" onChange={(e) => setSort(e.target.value)}>
+                        <option value='asc' >Low to High</option>
+                        <option value='dsc' >High to Low</option>
+                      </select>
+                      <div>
+                      <p className="font-bold text-xl pl-2 my-2">Category</p>
+                      <select className="select select-bordered w-full max-w-xs" onChange={(e) => setCategory(e.target.value)}>
+                        <option value=''>Categort</option>
+                        {
+                            uniqueCategory.map((cate) => 
+                                <option key={cate} >{cate}</option>
+                            )
+                        }
+                        
+                      </select>
+                      <p className="font-bold text-xl pl-2 my-2">Brand</p>
+                      <select className="select select-bordered w-full max-w-xs" onChange={(e) => setBrand(e.target.value)}>
+                        <option value=''>brands</option>
+                        {
+                            uniqueBrand.map((brand)=>
+                                <option key={brand} >{brand}</option>
+                            )
+                        }
+                      </select>
+                      <button className="btn  my-2 w-full" onClick={handlereset}>Reset</button>
+                </div>
+                </div>
+
             </div>
             <div className="grid col-span-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
             {
@@ -27,13 +89,14 @@ const ProductCad = () => {
                         <img
                           src={p.image}
                           alt="Shoes"
-                          className="rounded-xl" />
+                          className="rounded-xl object-cover w-full" />
                       </figure>
                       <div className="card-body items-center text-center">
                         <h2 className="card-title">Category : {p.category}</h2>
-                        <p>Name : {p.name}</p>
+                        <p>Title : {p.title}</p>
+                        <p>Brand : {p.brand}</p>
                         <p>Price : {p.price}</p>
-                        <p>Slot : {p.slot}</p>
+                        <p>Stock : {p.stock}</p>
                         <div className="card-actions">
                           <button className="btn btn-primary">Wishlist</button>
                           <button className="btn btn-primary">Buy Now</button>

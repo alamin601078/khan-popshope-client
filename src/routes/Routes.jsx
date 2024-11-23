@@ -13,6 +13,8 @@ import AdminHome from "../component/dashboard/admin/AdminHome";
 import BuyerHome from "../component/dashboard/buyer/BuyerHome";
 import SellerHome from "../component/dashboard/seller/SellerHome";
 import Protuct from "../component/protuct/Protuct";
+import Wishlist from "../component/dashboard/buyer/Wishlist";
+
 
 
 export const router = createBrowserRouter([
@@ -59,6 +61,9 @@ export const router = createBrowserRouter([
         },{
           path:"/dashboard/sellerhome",
           element:<SellerHome/>
+        },{
+          path:"/dashboard/wishlist",
+          element:<Wishlist/>
         }
       ]
     }

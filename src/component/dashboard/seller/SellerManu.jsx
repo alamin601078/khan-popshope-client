@@ -9,6 +9,7 @@ const SellerManu = () => {
                 <FaHome></FaHome>
                 Seller Home</NavLink>
             </li>
+          
         </div>
     );
 };

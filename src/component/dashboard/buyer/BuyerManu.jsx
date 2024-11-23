@@ -10,6 +10,11 @@ const BuyerManu = () => {
                 <FaHome></FaHome>
                 Buyer Home</NavLink>
             </li>
+            <li>
+                <NavLink to="/dashboard/wishlist">
+                <FaHome></FaHome>
+                Wishlist</NavLink>
+            </li>
             
         </div>
     );
