@@ -5,7 +5,7 @@ import useAuth from "../../hocks/useAuth";
 const Protuct = ({children}) => {
     const {user,loding} = useAuth();
     const location = useLocation();
-    console.log(user)
+    // console.log(user)
 
     if (loding){
         return <h1 className="text-4xl">Loading</h1>

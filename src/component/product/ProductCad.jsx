@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { axiosPublic } from "../../hocks/useAxiosPublic";
 import { FaSearch } from "react-icons/fa";
+import Swal from "sweetalert2";
+import useAuth from "../../hocks/useAuth";
 
 
 const ProductCad = () => {
+  const { user } = useAuth();
     const [product, setProduct]= useState([])
     const [search, setSearch]= useState("")
     const [sort, setSort]= useState('asc')
@@ -15,6 +18,7 @@ const ProductCad = () => {
 
     console.log(brand, category,sort,search)
     // console.log(uniqueBrand,uniqueCategory)
+    
     useEffect(() =>{
        const fetch = async () => {
         axiosPublic.get(`/product?title=${search}&sort=${sort}&brand=${brand}&category=${category}`)
@@ -42,6 +46,28 @@ const ProductCad = () => {
         setBrand("");
         window.location.reload();
     }
+    
+    const handleWishlist = async (p)=> {
+      console.log(p)
+      await axiosPublic.patch(`/wishlist/add`,{
+        userEmail:user.email,
+        productId:p
+      })
+      .then(res => {
+        console.log(res.data)
+        if(res.data.modifiedCount){
+          // refetch()
+          Swal.fire({
+              position: "center",
+              icon: "success",
+              title:"Wishlist Added successfully",
+              showConfirmButton: false,
+              timer: 1500
+            });
+      }
+    })
+    }
+
 
     return (
         <div className="grid grid-flow-col lg:grid-cols-12">
@@ -98,7 +124,7 @@ const ProductCad = () => {
                         <p>Price : {p.price}</p>
                         <p>Stock : {p.stock}</p>
                         <div className="card-actions">
-                          <button className="btn btn-primary">Wishlist</button>
+                          <button className="btn btn-primary" onClick={() => handleWishlist(p._id)}>Wishlist</button>
                           <button className="btn btn-primary">Buy Now</button>
                         </div>
                       </div>
