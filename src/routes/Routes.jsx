@@ -14,6 +14,7 @@ import BuyerHome from "../component/dashboard/buyer/BuyerHome";
 import SellerHome from "../component/dashboard/seller/SellerHome";
 import Protuct from "../component/protuct/Protuct";
 import Wishlist from "../component/dashboard/buyer/Wishlist";
+import AddProduct from "../component/dashboard/seller/AddProduct";
 
 
 
@@ -64,6 +65,9 @@ export const router = createBrowserRouter([
         },{
           path:"/dashboard/wishlist",
           element:<Wishlist/>
+        },{
+          path:"/dashboard/addproduct",
+          element:<AddProduct/>
         }
       ]
     }

@@ -9,6 +9,11 @@ const SellerManu = () => {
                 <FaHome></FaHome>
                 Seller Home</NavLink>
             </li>
+            <li>
+                <NavLink to="/dashboard/addproduct">
+                <FaHome></FaHome>
+                Add Product</NavLink>
+            </li>
           
         </div>
     );
