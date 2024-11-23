@@ -2,8 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hocks/useAuth";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import Swal from "sweetalert2";
+import { axiosPublic } from "../../hocks/useAxiosPublic";
 
 const Login = () => {
     const {sinInUser,gooleSingIn } = useAuth()
@@ -47,7 +47,8 @@ const Login = () => {
                 const status ="approved";
                 const uIfo={email,name,role,status}
 
-                axios.post('http://localhost:4000/user', uIfo)
+                // axios.post('http://localhost:4000/user', uIfo)
+                axiosPublic.post('/user', uIfo)
                 .then(res => {
                     if (res.data.insertedId) {
                         console.log(res.data)

@@ -10,13 +10,16 @@ const AddProduct = () => {
 
     const onSubmit = (data) => {
       console.log("Form Data:", data);
-  
-      // Example: Sending the data to a backend API
-      axiosPublic.post('/seller/addproduct', data ,{headers:{
+    //   {headers:{
+    //     Authorization:` ${token}`
+    //   }}
+
+      axiosPublic.post('/seller/addproduct', data , {headers:{
         Authorization:` ${token}`
       }})
       .then(res => {
           if (res.data.insertedId) {
+            console.log(res.data)
               Swal.fire({
                   position: 'center',
                   icon: 'success',

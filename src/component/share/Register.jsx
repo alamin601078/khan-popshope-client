@@ -45,11 +45,11 @@ const Register = () => {
      
 
         createUser(data.email,data.password)   
-         .then(result => {
+         .then( () => {
             // console.log(result.user);
             setSuccess('User Created Successfully')
-            axiosPublic.post('/user', userInfo)
             // axios.post('http://localhost:4000/user', userInfo)
+            axiosPublic.post('/user', userInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({

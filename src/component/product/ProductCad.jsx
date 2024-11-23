@@ -121,7 +121,7 @@ const ProductCad = () => {
                         <h2 className="card-title">Category : {p.category}</h2>
                         <p>Title : {p.title}</p>
                         <p>Brand : {p.brand}</p>
-                        <p>Price : {p.price}</p>
+                        <p>Price : ${p.price}</p>
                         <p>Stock : {p.stock}</p>
                         <div className="card-actions">
                           <button className="btn btn-primary" onClick={() => handleWishlist(p._id)}>Wishlist</button>
