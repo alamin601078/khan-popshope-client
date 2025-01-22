@@ -3,8 +3,10 @@ import Blog from "../component/share/Blog";
 
 const About = () => {
     return (
-        <div>
+        <div className="bg-white">
+
             <Blog/>
+
         </div>
     );
 };

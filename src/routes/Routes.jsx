@@ -15,6 +15,7 @@ import SellerHome from "../component/dashboard/seller/SellerHome";
 import Protuct from "../component/protuct/Protuct";
 import Wishlist from "../component/dashboard/buyer/Wishlist";
 import AddProduct from "../component/dashboard/seller/AddProduct";
+import Adminhom from "../component/dashboard/admin/Adminhom";
 
 
 
@@ -51,10 +52,22 @@ export const router = createBrowserRouter([
       ]
     },{
       path:"/dashboard",
-      element:<Protuct><Dashbard/></Protuct>,
+      element:<Dashbard/>,
       children:[
         {
           path:"/dashboard/adminhome",
+          element: <Adminhom/>
+        },
+        {
+          path:"/dashboard/adminusers",
+          element: <AdminHome/>
+        },
+        {
+          path:"/dashboard/adminselar",
+          element: <AdminHome/>
+        },
+        {
+          path:"/dashboard/allproduct",
           element: <AdminHome/>
         },{
           path:"/dashboard/buyerhome",

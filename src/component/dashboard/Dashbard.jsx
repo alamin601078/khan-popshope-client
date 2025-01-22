@@ -17,10 +17,12 @@ const Dashbard = () => {
         <div className="w-64 min-h-screen bg-opacity-30  bg-black">
             <ul className="menu p-4">
                 
-                { role ==='admin'&& <AdminManu/>}
+                {/* { role ==='admin'&& <AdminManu/>}
+                { role ==='seller'&& <SellerManu/>}
+                { role ==='buyer'&& <BuyerManu/>} */}
+                { <AdminManu/>}
                 { role ==='seller'&& <SellerManu/>}
                 { role ==='buyer'&& <BuyerManu/>}
-
                 <div className="divider"></div>
                 <li>
                     <NavLink to="/">

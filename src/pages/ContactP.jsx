@@ -3,7 +3,7 @@ import Contact from "../component/home/Contact";
 
 const ContactP = () => {
     return (
-        <div>
+        <div className="py-8">
             <Contact/>
         </div>
     );

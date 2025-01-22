@@ -20,6 +20,7 @@ const Navber = () => {
       <li><Link to="/product">Products</Link></li>
       <li><Link to="/contact">Contacts</Link></li>
       <li><Link to="/about">About</Link></li>
+      <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li>
       </>
     return (
         <div className="navbar bg-base-100">
@@ -67,7 +68,7 @@ const Navber = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li><Link to='profile'><CgProfile /> Profile</Link></li>
         <li><Link to='setting'><CiSettings/> Settings</Link></li>
-        <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li>
+        {/* <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li> */}
         <li>
             <button onClick={handleLogOut} className="btn btn-ghost"><CiLogout /> LogOut</button>
       

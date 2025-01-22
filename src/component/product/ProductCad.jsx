@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { axiosPublic } from "../../hocks/useAxiosPublic";
 import { FaSearch } from "react-icons/fa";
-import Swal from "sweetalert2";
 import useAuth from "../../hocks/useAuth";
+import Swal from 'sweetalert2'
 
 
 const ProductCad = () => {
@@ -107,7 +107,7 @@ const ProductCad = () => {
                 </div>
 
             </div>
-            <div className="grid col-span-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
+            <div className="min-h-[600px] grid col-span-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center">
             {
                 product.map((p) => <prod key={p.id}>
                     <div className="card bg-base-100 w-96 shadow-xl">
