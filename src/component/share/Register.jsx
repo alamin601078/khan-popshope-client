@@ -69,7 +69,7 @@ const Register = () => {
          })
     }
     return (
-        <div className="hero min-h-screen bg-black bg-opacity-50 ">
+        <div className="hero min-h-screen ">
         <form onSubmit={handleSubmit(onSubmit)}  className="container flex flex-col w-full max-w-md p-4 rounded-md shadow sm:p-8 space-y-12 bg-gray-50 bg-opacity-50 "
          >
             <p className="font-medium text-lg text-center mt-3 ">Personal Inormation</p>

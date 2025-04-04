@@ -20,7 +20,7 @@ const Navber = () => {
       <li><Link to="/product">Products</Link></li>
       <li><Link to="/contact">Contacts</Link></li>
       <li><Link to="/about">About</Link></li>
-      <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li>
+      {/* <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li> */}
       </>
     return (
         <div className="navbar bg-base-100">
@@ -46,7 +46,7 @@ const Navber = () => {
               {navOptions}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost text-xl"><img src="https://i.ibb.co.com/7Rh1wzK/5974830-22119.jpg" className="h-4 w-4" /> KHAN POPSHOPE</Link>
+          <Link to='/' className="flex gap-2 text-xl"><img  src="https://i.ibb.co.com/7Rh1wzK/5974830-22119.jpg" className="h-4 w-4 mt-2" /> KHAN POPSHOPE</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -68,7 +68,7 @@ const Navber = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li><Link to='profile'><CgProfile /> Profile</Link></li>
         <li><Link to='setting'><CiSettings/> Settings</Link></li>
-        {/* <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li> */}
+        <li><Link to='dashboard'><MdDashboard /> Dashboard</Link></li>
         <li>
             <button onClick={handleLogOut} className="btn btn-ghost"><CiLogout /> LogOut</button>
       
@@ -78,10 +78,10 @@ const Navber = () => {
        
         </>:<>
         <Link to="/login">
-             <button className="btn bg-gray-400 text-black px-4 rounded-md border border-black">Sing In</button>
+             <button className="btn btn-primary  text-black px-4 rounded-md border border-black">Sing In</button>
           </Link>
           <Link to="/register">
-             <button className="btn bg-black text-white px-4 rounded-md border border-black">Sing Up</button>
+             <button className="btn btn-primary  text-white px-4 rounded-md border border-black">Sing Up</button>
           </Link>
         </>
        }

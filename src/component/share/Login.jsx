@@ -69,7 +69,7 @@ const Login = () => {
         })
     }
     return (
-        <div className="flex justify-center items-center hero min-h-screen bg-black bg-opacity-50">
+        <div className="flex justify-center items-center hero min-h-screen ">
         <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-50 bg-opacity-50 ">
             <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
             <p className="text-sm text-center dark:text-gray-600">Dont have account?

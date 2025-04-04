@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const FeaturedProducts = () => {
     return (
+<Link to="/product">
 <div className="card bg-base-100 w-96 shadow-xl">
   <figure className="px-10 pt-10">
     <img
@@ -18,6 +20,7 @@ const FeaturedProducts = () => {
     </div>
   </div>
 </div>
+</Link>
     );
 };
 
