@@ -3,10 +3,10 @@ import useAuth from "../../hocks/useAuth";
 
 const HeroSection = () => {
     const { user } = useAuth();
-    console.log(user)
+    // console.log(user)
     return (
 <div
-  className="hero min-h-fit:  bg-center bg-[length:1300px_250px] bg-no-repeat object-cover"
+  className="hero lg:h-[550px] bg-center bg-no-repeat object-cover"
   style={{
     backgroundImage: "url(https://i.ibb.co.com/GRywgj0/5972189-21621.jpg)",
   backgroundSize: "cover",

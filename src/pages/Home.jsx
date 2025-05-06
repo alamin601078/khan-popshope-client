@@ -14,13 +14,13 @@ const Home = () => {
             <HeroSection/>
             <Carousel/>
             <Ofer/>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center ">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center ">
                 <FeaturedProducts/>
                 <FeaturedProducts/>
                 <FeaturedProducts/>
                 <FeaturedProducts/>
                 <FeaturedProducts/>
-            </div>
+            </div> */}
             <Testimonial/>
             <Faq/>
             <Team/>

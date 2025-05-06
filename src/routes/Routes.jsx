@@ -12,10 +12,10 @@ import ContactP from "../pages/ContactP";
 import AdminHome from "../component/dashboard/admin/AdminHome";
 import BuyerHome from "../component/dashboard/buyer/BuyerHome";
 import SellerHome from "../component/dashboard/seller/SellerHome";
-import Protuct from "../component/protuct/Protuct";
 import Wishlist from "../component/dashboard/buyer/Wishlist";
 import AddProduct from "../component/dashboard/seller/AddProduct";
 import Adminhom from "../component/dashboard/admin/Adminhom";
+import ViewProduct from "../component/product/ViewProduct";
 
 
 
@@ -29,7 +29,13 @@ export const router = createBrowserRouter([
           element: <Home/>
         },{
           path:"/product",
-          element: <Product/>
+          element: <Product/>,
+          children:[
+            {
+              path:"product/:id",
+              element: <ViewProduct/>
+            }
+          ]
         },{
           path:"/contact",
           element: <ContactP/>

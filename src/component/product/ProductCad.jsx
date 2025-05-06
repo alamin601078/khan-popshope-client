@@ -70,7 +70,7 @@ const ProductCad = () => {
 
 
     return (
-        <div className="grid grid-flow-col lg:grid-cols-12">
+        <div className="gap-6 grid grid-flow-row lg:grid-cols-12 ">
             <div className="grid col-span-2">
                 <div>
                 <form className="input input-bordered flex items-center gap-2" onSubmit={handleSearch}>
@@ -117,7 +117,7 @@ const ProductCad = () => {
                           alt="Shoes"
                           className="rounded-xl object-cover w-full" />
                       </figure>
-                      <div className="card-body items-center text-center">
+                      <div className="card-body items-start text-start">
                         <h2 className="card-title">Category : {p.category}</h2>
                         <p>Title : {p.title}</p>
                         <p>Brand : {p.brand}</p>
@@ -131,7 +131,7 @@ const ProductCad = () => {
                     </div>
                 </prod>)
             }
-        </div>
+           </div>
 
         </div>
     );
